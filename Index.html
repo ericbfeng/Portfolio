@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eric Feng Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="#" alt="" />
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="burgerStyle"></span>
+        </button>
+        <nav>
+            <ul class="nav_list">
+                <li class="nav_item"><a class="nav_link" href="#home">Home</a></li>
+                <li class="nav_item"><a class="nav_link" href="#intro">Introduction</a></li>
+                <li class="nav_item"><a class="nav_link" href="#res">Resume</a></li>
+                <li class="nav_item"><a class="nav_link" href="#">My Projects</a></li>
+                <li class="nav_item"><a class="nav_link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Intro-->
+    <section class="intro" id="home">
+        <h1 class="section_title section_title-intro">
+             Hello, I am <strong>Eric Feng</strong>
+        </h1>
+        <p class="section_subtitle section_subtitle-intro">Software Engineer</p>
+        <img src="images/headshot.jpg" class = "intro-img" alt="Image of me" />
+    </section>
+
+    <!--This is my introduction-->
+    <section class="profile" id="intro">
+        <h2 class="section_title section_title-whoami">About Me</h2>
+        <p class="section_subtitle section_subtitle-whoami" ">Let me introduce myself.</p>
+
+        <div class="my-profile">
+            <div class="profile-section">
+                <h3>Education:</h3>
+                <p>
+                    I am a current sophmore attending Stanford University planning to major in Computer Science and minor in Managment Science and Engineering
+                </p>
+            </div>
+            <div class="profile-section">
+                <h3>Skills:</h3>
+                <p>
+                    This is a placeholder until I am activley looking for a job.
+                </p>
+            </div>
+            <div class="profile-section">
+                <h3>Goals:</h3>
+                <p>
+                    I need to get some more projects under my belt and also add additonal pages for each individual project.
+                </p>
+            </div>
+        </div>
+        <a href="#contact" class="btn">Contact me</a>
+    </section>
+    <section class="resume" id="res">
+        <h2 class="section_title section_title-resume"> Resume</h2>
+        <p class="section_subtitle section_subtitle-res">Here are my past education and experiences:<p />
+        <div class="temp">
+            <img src="images/res.png" class="res">
+        </div>
+        <button download="Resume.pdf" class="btn-res">
+            Download my Resume
+        </button>
+    </section>
+        <section class="my-projects" id="projects">
+            <h2 class="section_title section_title-work">My Projects</h2>
+            <p class="section_subtitle section_subtitle-work">Here is a selection of my works</p>
+            <div class="portfolio">
+                <!--number 1-->
+                <a href="item1.html" class="portfolio-item">
+                    <img src="images/pg1.png" class="portfolio-img">
+                </a>
+                <!--number 2-->
+                <a href="item2.html" class="portfolio-item">
+                    <img src="images/pg3.png" class="portfolio-img">
+                </a>
+                <!--number 3-->
+                <a href="#" class="portfolio-item">
+                    <img src="images/pg2.PNG" class="portfolio-img">
+                </a>
+                <!--number 4-->
+                <a href="#" class="portfolio-item">
+                    <img src="images/pg4.png" class="portfolio-img">
+                </a>
+                <!--number 5-->
+                <a href="#" class="portfolio-item">
+                    <img src="images/pg5.png" class="portfolio-img">
+                </a>
+                <!--number 6-->
+                <a href="#" class="portfolio-item">
+                    <img src="images/placeholder.png" class="portfolio-img">
+                </a>
+                <!--number 7-->
+                <a href="#" class="portfolio-item">
+                    <img src="images/placeholder.png" class="portfolio-img">
+                </a>
+                <!--number 8-->
+                <a href="#" class="portfolio-item">
+                    <img src="images/placeholder.png" class="portfolio-img">
+                </a>
+            </div>
+        </section>
+        <footer class="footer">
+            <div id="contact"></div>
+            <h3 class="section_title"> Contact Me:</h3>
+            <ul class="social-list">
+                <li class="socials_item"> <a href="www.google.com" class="socials_link"><i class="fab fa-github"></i></a></li>
+                <li class="socials_item"> <a href="www.google.com" class="socials_link"><i class="fas fa-envelope"></i></a></li>
+                <li class="socials_item"> <a href="#" class="socials_link"><i class="fab fa-linkedin"></i></a></li>
+                <li class="socials_item"> <a href="#" class="socials_link"><i class="fab fa-codepen"></i></a></li>
+            </ul>
+
+        </footer>
+        <script src="js/index.js"></script>
+</body>
+</html>

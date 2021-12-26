@@ -1,0 +1,405 @@
+﻿*,
+*::before,
+*::after{  /** this just tells to apply before every element and after this element box-sizing of border box to make calculating it much easier*/
+    box-sizing: border-box;
+}
+
+:root { /** selects root element which will always be the html element in html*/
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Sans Pro', monospace;
+    --fw-reg: 300;
+    --fw-bold: 900;
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0db;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    --box-shadow: .25em .25em .75em rgba(0,0,0,.25);
+}
+
+@media (min-width: 800px){
+    :root{
+        --fs-h1:4.5rem;
+        --fs-h2:3.75rem;
+        --fs-h3:1.5rem;
+        --fs-body: 1.125rem;
+    }
+
+
+}
+section{
+    padding:5em 2em;
+}
+
+strong{font-weight:var(--fw-bold)}
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--clr-light);
+    color:var(--clr-dark);
+    margin: 0;
+    font-family:var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height:1.6; /**good default value*/
+}
+
+img{
+    display: block; /*same command to make flex but it makes it block instead.*/
+    max-width:100%
+}
+
+.btn{
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-accent);
+    color:var(--clr-dark);
+    text-decoration: none; /* get rid of link decorations*/
+    cursor:pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out
+
+}
+.btn:hover{
+    transform:scale(1.1);
+}
+
+h1,
+h2,
+h3{
+    line-height:1.1;
+    margin:0;
+}
+
+h1{font-size: var(--fs-h1)}
+h2 {
+    font-size: var(--fs-h2)
+}
+h3 {
+    font-size: var(--fs-h3)
+}
+.section_title{
+    margin-bottom: .24em;
+
+}
+
+.section_title-intro{
+    font-weight: var(--fw-reg);
+}
+
+.section_title-intro strong {
+    display: block;
+}
+
+.section_subtitle{
+    margin:0;
+    font-size:var(--fs-h3);
+}
+
+.section_subtitle-whoami,
+.section_subtitle-intro{
+    background: var(--clr-accent);
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+    padding:.25em 1em;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    padding:1em
+}
+
+nav{
+    position:fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:100;
+    transform:translateX(100%);
+    transition: transform 250ms cubic-bezier(.5,0,.5,1);
+}
+
+.nav_list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_link{
+    color:inherit;
+    font-weight: var(--fw-bold);
+    font-size:var(--fs-h3);
+    text-decoration:none;
+}
+.nav_link:hover{
+    color: var(--clr-accent);
+}
+
+
+.intro{
+    position:relative;
+}
+.intro-img{
+    box-shadow:var(--box-shadow);
+}
+
+@media(min-width: 600px){
+    .intro{
+        display: grid;
+        width:min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: /** sets up the templates, with a grid thats 2x1 */
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content; /**sets grid so top item item in column my name only takes up the size it needs, while the other takes the whole thing*/
+    }
+    .intro-img{
+        grid-area: img;
+        min-width: 250px;
+        z-index:2;
+    }
+
+    /** call it here for the night get to commenting why all this is done.*/
+    .section_subtitle-intro{
+        align-self:start; /** puts at start, the top left of grid stops from stretchign down*/
+        grid-column: -1 / 1; /* goes from start all the way to the end**/
+        grid-row:2; /*place all in  the 2nd row so it doesnt go in new line*/
+        text-align:right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+
+}
+
+.profile{
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    background-image: url(../images/bg1.png); /**temp photo find a better one later*/
+    text-align: center;
+    background-size:cover;
+}
+
+.section_title-whoami{
+    color: var(--clr-accent);
+    position:relative;
+
+}
+
+.section_title-whoami::after{ /**makes something after*/
+    content: ''; /* psuedo elements need contne or wont show**/
+    display: block;
+    width: 25%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;
+}
+
+.profile-section{
+    max-width:500px;
+    margin: 0 auto;
+}
+
+@media (min-width:800px) {
+    .my-profile {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .profile-section + .profile-section{
+        margin-left: 2em;
+    }
+
+}
+
+/*Resume section*/
+.resume {
+    text-align: center;
+}
+
+.res {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 40%;
+}
+
+.btn-res {
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    text-decoration: none; /* get rid of link decorations*/
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out
+}
+
+.btn-res:hover {
+        transform: scale(1.1);
+}
+
+
+
+/**portfolio**/
+.my-projects{
+    background-color:var(--clr-dark);
+    color:var(--clr-light);
+    text-align: center;
+
+}
+
+.section_subtitle-work{
+    background-color: var(--clr-accent);
+    margin-bottom: 2em;
+    font-weight:var(--fw-bold);
+}
+
+.portfolio{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); /* auto decide the column amount with size of a min value of 300 px and max of 1 fr**/
+    
+}
+.portfolio-item{
+    background: var(--clr-accent);
+    overflow:hidden; /*hides when expands*/
+}
+.portfolio-img{
+    transition: transform 750ms cubic-bezier(0.5,0,.5,1),
+        opacity 250ms linear
+
+}
+.portfolio-item:focus{
+    position:relative;
+    z-index:2;
+}
+
+
+.portfolio-img:hover,
+.portfolio-item:focus .portfolio-img{
+    transform:scale(1.2);
+    opacity: 0.75;
+}
+
+.footer{
+    background:#111;
+    color: var(--clr-accent);
+    text-align:center;
+    padding: 2.5em 0;
+    font-size: 1rem;
+}
+
+.footer a{
+    color:inherit;
+}
+
+.socials_link:hover{
+    opacity: .7;
+}
+.social-list{
+
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    margin: 2em 0 0;
+    padding: 0;
+    font-size: 2rem;
+}
+
+.socials_item{
+    margin: 0 1em;
+}
+
+.socials-link{
+    padding: .5em;
+}
+
+.burgerStyle{
+    display:block;
+    position:relative;
+}
+.burgerStyle,
+.burgerStyle::before,
+.burgerStyle::after {
+        background: var(--clr-accent);
+        width: 2em;
+        height: 3px;
+        border-radius: 1em;
+        transition: transform 250ms ease-in-out;
+    }
+.burgerStyle::before,
+.burgerStyle::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.burgerStyle::before{ top:6px;}
+.burgerStyle::after{bottom:6px;}
+
+.nav-toggle{
+    background: transparent;
+    border: 0;
+    padding: 0.25em;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 10000;
+}
+
+.burgerStyle:hover{
+    transform:scale(1.1);
+}
+
+
+.nav-open nav{
+    transform: translateX(0);
+}
+.nav-open .nav-toggle{
+    position:fixed;
+}
+.nav-open .burgerStyle{
+    transform: rotate(.625turn);
+
+}
+
+.nav-open .burgerStyle::before{
+    transform: rotate(90deg) translateX(-6px);
+
+}
+
+.nav-open .burgerStyle::after{
+    opacity: 0;
+
+
+}
+
+.port-item{
+    padding: 0 2em 2em;
+    max-width: 1000px ;
+    margin: 0 auto; 
+
+}
